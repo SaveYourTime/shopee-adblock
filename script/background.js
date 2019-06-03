@@ -1,0 +1,1 @@
+chrome.tabs.onUpdated.addListener(() => _gaq.push(['_trackEvent', 'View', 'entered', 'Website', 1, true]));

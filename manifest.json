@@ -20,7 +20,14 @@
     },
     "default_title": "Shopee AdBlock"
   },
-  "permissions": ["tabs", "storage", "activeTab"],
+  "background": {
+    "scripts": [
+      "script/background.js",
+      "script/asyncTracking.js"
+    ],
+    "persistent": false
+  },
+  "permissions": ["tabs", "activeTab"],
   "event_rules": [{
     "event": "declarativeContent.onPageChanged",
     "actions": [{
@@ -41,5 +48,6 @@
       "run_at": "document_idle",
       "js": ["script/watch.js"]
     }
-  ]
+  ],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
